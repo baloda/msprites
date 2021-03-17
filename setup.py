@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/baloda/msprites",
     project_urls={
-        "Bug Tracker": "https://github.com/baloda/subconverter/msprites",
+        "Bug Tracker": "https://github.com/baloda/msprites/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
