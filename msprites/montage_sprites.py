@@ -46,17 +46,17 @@ class MontageSprites(Settings):
         webvtt = WebVTT(self)
         webvtt.generate()
 
-    def copy_to(self, to):
-        os.makedirs(to, exist_ok=True)
-        shutil.copytree(self.dir.name, to)
+    def copy_to(self, copy_dest):
+        os.makedirs(copy_dest, exist_ok=True)
+        shutil.copytree(self.dir.name, copy_dest)
 
 
     @classmethod
-    def from_media(cls, path, create_webvtt=True, to_dest=None):
+    def from_media(cls, path, create_webvtt=True, copy_dest=None):
         sprites = MontageSprites(FFmpegThumbnails.from_media(path))
         sprites.generate()
         sprites.to_webvtt(create_webvtt)
-        if to_dest:
-            sprites.copy(to_dest)
+        if copy_dest:
+            sprites.copy_to(copy_dest)
             sprites.cleanup()
         return sprites

@@ -11,3 +11,22 @@
     3. Create a webvtt file of spritesheet images
 
 It uses temp folder for storage. for persistence storage move these different folder or location.
+
+Installation
+```pip install msprites```
+
+# How to use:
+```
+import os
+from msprites import Settings as SpriteSetting
+from msprites import MontageSprite
+
+SpriteSetting.load(ips=0.50)
+sprite = MontageSprites.from_media(
+    path="..SampleVideo_360x240_20mb.mp4",create_webvtt=True
+)
+
+print(sprite.dir.name)
+for filename in os.listdir(sprite.dir.name):
+    print(filename)
+```
