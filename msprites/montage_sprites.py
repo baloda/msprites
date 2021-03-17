@@ -6,18 +6,14 @@ from msprites import FFmpegThumbnails
 from msprites.settings import Settings
 from msprites.constants import THUMBNAIL_SPRITESHEET
 from msprites.webvtt import WebVTT
+from msprites.temp_file import TempFile
 
-class TempFile:
-    def __init__(self, name):
-        self.name = name
-    def cleanup(self):
-        os.unlink(self.name)
 
 class MontageSprites(Settings):
 
     def __init__(self, thumbs):
         self.thumbs: FFmpegThumbnails = thumbs
-        self.dir = TempFile("/Users/dharmveer.baloda/workspace/magic/sprites/") or tempfile.TemporaryDirectory()
+        self.dir = tempfile.TemporaryDirectory()
 
     def dest(self):
         return os.path.join(self.dir.name, self.FILENAME_FORMAT.format(ext=self.EXT))
