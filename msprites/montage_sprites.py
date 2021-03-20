@@ -46,17 +46,20 @@ class MontageSprites(Settings):
         webvtt = WebVTT(self)
         webvtt.generate()
 
-    def copy_to(self, copy_dest):
-        os.makedirs(copy_dest, exist_ok=True)
-        shutil.copytree(self.dir.name, copy_dest)
+    def copy(self, dst):
+        """
+            copies sprite images from temp folder to dst folder
+            not using shutil.copytree -> version and exception issue
+        """
+        os.makedirs(dst, exist_ok=True)
+        for filename in os.listdir(self.dir.name):
+            filepath = os.path.join(self.dir.name, filename)
+            shutil.copy(filepath, todst)
 
 
     @classmethod
-    def from_media(cls, path, create_webvtt=True, copy_dest=None):
+    def from_media(cls, path, create_webvtt=True):
         sprites = MontageSprites(FFmpegThumbnails.from_media(path))
         sprites.generate()
         sprites.to_webvtt(create_webvtt)
-        if copy_dest:
-            sprites.copy_to(copy_dest)
-            sprites.cleanup()
         return sprites
