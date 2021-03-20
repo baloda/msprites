@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="msprites",
-    version="1.0.2",
+    version="1.0.3",
     author="Dharmveer Baloda",
     author_email="dharmvrbaloda836@gmail.com",
     description="Create thumbnail spritesheet from mp4 media files",
