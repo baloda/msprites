@@ -1,4 +1,4 @@
-# msprites, media thumbnail sprites, multipule thumnails spirtes
+# msprites, media thumbnail sprites, multipule thumbnail spirtes
 
 # Requirements:
 
