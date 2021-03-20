@@ -19,7 +19,7 @@ Installation
 ```
 import os
 from msprites import Settings as SpriteSetting
-from msprites import MontageSprite
+from msprites import MontageSprites
 
 SpriteSetting.load(ips=0.50)
 sprite = MontageSprites.from_media(
