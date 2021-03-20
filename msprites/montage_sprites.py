@@ -54,7 +54,7 @@ class MontageSprites(Settings):
         os.makedirs(dst, exist_ok=True)
         for filename in os.listdir(self.dir.name):
             filepath = os.path.join(self.dir.name, filename)
-            shutil.copy(filepath, todst)
+            shutil.copy(filepath, dst)
 
 
     @classmethod
