@@ -56,6 +56,9 @@ class MontageSprites(Settings):
             filepath = os.path.join(self.dir.name, filename)
             shutil.copy(filepath, dst)
 
+    def copy_thumbnails(self, dst):
+        self.thumbs.copy(dst)
+
 
     @classmethod
     def from_media(cls, path, create_webvtt=True):

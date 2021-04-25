@@ -29,6 +29,15 @@ class FFmpegThumbnails(Settings):
         imlist = os.listdir(self.dir.name)
         return len(imlist)
 
+    def copy(self, dst):
+        """
+            copies thumbnail images from temp folder to dst folder
+        """
+        os.makedirs(dst, exist_ok=True)
+        for filename in os.listdir(self.dir.name):
+            filepath = os.path.join(self.dir.name, filename)
+            shutil.copy(filepath, dst)
+
     @classmethod
     def from_media(cls, path):
         thumbs = FFmpegThumbnails(filename=path)
