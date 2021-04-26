@@ -66,7 +66,8 @@ class WebVTT:
                     start=self.seconds_to_timestamp(start),
                     end=self.seconds_to_timestamp(end),
                 ),
-                filename
+                filename,
+                "\n\n"
             ]
             start = end
             end += self.ips_to_seconds()
