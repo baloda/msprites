@@ -1,4 +1,5 @@
 import os
+import shutil
 import tempfile
 from msprites.command import Command
 from msprites.settings import Settings
